@@ -11,9 +11,6 @@ zoe = Customer.create(name: "Zoe", favorite_cuisine: "Szechuan")
 alan = Customer.create(name: "Alan", favorite_cuisine: "American")
 
 
-
-
-
 bobs_burgers = Restaurant.create(name: "Bobs Burgers", city: "Houston", cuisine: "American")
 sallys_szechuan = Restaurant.create(name: "Sally's Szechuan", city: "Bellaire", cuisine: "Szechuan")
 hibachi_heaven = Restaurant.create(name: "Hibachi Heaven", city: "Katy", cuisine: "Japanese")
