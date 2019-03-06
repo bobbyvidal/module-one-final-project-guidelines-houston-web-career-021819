@@ -4,5 +4,3 @@ class Customer < ActiveRecord::Base
 end
 
 
-#iwheufgeuihui
-#this is test code to see if the merge worked 
