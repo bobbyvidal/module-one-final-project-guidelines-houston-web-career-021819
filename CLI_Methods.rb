@@ -14,17 +14,21 @@ def greet(customer)
     puts "Welcome back #{customer.name}!"
 end
 
-def options(customer)
+def menu(customer)
     @cli.choose do |menu|
         menu.prompt = "What are you looking for today?"
         
         
-        menu.choice("Italian"){(Restaurant.find_by_restaurants)}
-        menu.choice("Japanese"){(Restaurant.find_by_restaurants("Japanese"))}
-        menu.choice("Szechuan"){(Restaurant.find_by_restaurants("Szechuan"))}
-        menu.choice("American"){(Restaurant.find_by_restaurants("American"))}
-        menu.choice("Latin"){(Restaurant.find_by_restaurants("Latin"))}
-        menu.choice("Indian"){(Restaurant.find_by_restaurants("Indian"))}
+        menu.choice("Italian"){ puts Restaurant.find_by_restaurants("Italian")[0].name}
+        menu.choice("Japanese"){Restaurant.find_by_restaurants("Japanese")}
+        menu.choice("Szechuan"){Restaurant.find_by_restaurants("Szechuan")}
+        menu.choice("American"){Restaurant.find_by_restaurants("American")}
+        menu.choice("Latin"){Restaurant.find_by_restaurants("Latin")}
+        menu.choice("Indian"){Restaurant.find_by_restaurants("Indian")}
+
+
+
+        
     end
 end
 
@@ -34,4 +38,4 @@ end
 
 current_customer = ask_for_username
 greet(current_customer)
-options(current_customer)
+menu(current_customer)
