@@ -18,17 +18,13 @@ def menu(customer)
     @cli.choose do |menu|
         menu.prompt = "What are you looking for today?"
         
-        
-        menu.choice("Italian"){ puts Restaurant.find_by_restaurants("Italian")[0].name}
-        menu.choice("Japanese"){Restaurant.find_by_restaurants("Japanese")}
-        menu.choice("Szechuan"){Restaurant.find_by_restaurants("Szechuan")}
-        menu.choice("American"){Restaurant.find_by_restaurants("American")}
-        menu.choice("Latin"){Restaurant.find_by_restaurants("Latin")}
-        menu.choice("Indian"){Restaurant.find_by_restaurants("Indian")}
-
-
-
-        
+        menu.choice("Italian"){Restaurant.find_by_restaurants("Italian").each {|x| puts x.name}}
+        menu.choice("Japanese"){Restaurant.find_by_restaurants("Japanese").each {|x| puts x.name}}
+        menu.choice("Szechuan"){Restaurant.find_by_restaurants("Szechuan").each {|x| puts x.name}}
+        menu.choice("American"){Restaurant.find_by_restaurants("American").each {|x| puts x.name}}
+        menu.choice("Latin"){Restaurant.find_by_restaurants("Latin").each {|x| puts x.name}}
+        menu.choice("Indian"){Restaurant.find_by_restaurants("Indian").each {|x| puts x.name}}
+  
     end
 end
 

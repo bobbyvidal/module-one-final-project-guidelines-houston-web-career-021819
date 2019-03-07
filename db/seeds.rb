@@ -15,6 +15,7 @@ bobs_burgers = Restaurant.create(name: "Bobs Burgers", city: "Houston", cuisine:
 sallys_szechuan = Restaurant.create(name: "Sally's Szechuan", city: "Bellaire", cuisine: "Szechuan")
 hibachi_heaven = Restaurant.create(name: "Hibachi Heaven", city: "Katy", cuisine: "Japanese")
 pollys_pasta = Restaurant.create(name: "Polly's Pasta", city: "Houston", cuisine: "Italian")
+steves_spaghetti = Restaurant.create(name: "Steve's Spaghetti", city: "Bay Town", cuisine: "Italian")
 taqueria_barba = Restaurant.create(name: "Taqueria Barba", city: "Dallas", cuisine: "Latin")
 bombay_pizza = Restaurant.create(name: "Bombay Pizza Co.", city: "Houston", cuisine: "Indian")
 

@@ -5,6 +5,7 @@ class Restaurant < ActiveRecord::Base
 
     def self.find_by_restaurants(food_type) 
         restaurants = Restaurant.where(cuisine: food_type)
+
     end
 
     #binding.pry
