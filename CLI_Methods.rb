@@ -19,7 +19,7 @@ def options(customer)
         menu.prompt = "What are you looking for today?"
         
         
-        menu.choice("Italian"){(Restaurant.find_by_restaurants("Italian"))}
+        menu.choice("Italian"){(Restaurant.find_by_restaurants)}
         menu.choice("Japanese"){(Restaurant.find_by_restaurants("Japanese"))}
         menu.choice("Szechuan"){(Restaurant.find_by_restaurants("Szechuan"))}
         menu.choice("American"){(Restaurant.find_by_restaurants("American"))}
