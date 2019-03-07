@@ -12,12 +12,18 @@ alan = Customer.create(name: "Alan", favorite_cuisine: "American")
 
 
 bobs_burgers = Restaurant.create(name: "Bobs Burgers", city: "Houston", cuisine: "American")
+lasagna_house= Restaurant.create(name: "The Lasagna House", city: "Richmond", cuisine: "Italian")
+olive_garden = Restaurant.create(name: "Olive Garden", city: "Richmond", cuisine: "Italian" )
 sallys_szechuan = Restaurant.create(name: "Sally's Szechuan", city: "Bellaire", cuisine: "Szechuan")
 hibachi_heaven = Restaurant.create(name: "Hibachi Heaven", city: "Katy", cuisine: "Japanese")
 pollys_pasta = Restaurant.create(name: "Polly's Pasta", city: "Houston", cuisine: "Italian")
 steves_spaghetti = Restaurant.create(name: "Steve's Spaghetti", city: "Bay Town", cuisine: "Italian")
 taqueria_barba = Restaurant.create(name: "Taqueria Barba", city: "Dallas", cuisine: "Latin")
 bombay_pizza = Restaurant.create(name: "Bombay Pizza Co.", city: "Houston", cuisine: "Indian")
+himalayas = Restaurant.create(name: "The Himalayas", city: "Richmond", cuisine: "Indian")
+briyani_factory = Restaurant.create(name: "The Briyani Factory", city: "Houston", cuisine: "Indian")
+agas = Restaurant.create(name: "The Aga's Restaurant",city: "Houston", cuisine:"Indian")
+sangam = Restaurant.create(name: "Sangam - The chettinad House", city: "Richmond",cuisine: "Indian")
 
 
 review1 = Review.create(customer_id: alan.id, restaurant_id: bobs_burgers.id, content: "This place is very bad and there is a girl names Tina that is very weird and awkward.", rating: 1, affordability: 4)

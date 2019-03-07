@@ -14,18 +14,30 @@ def greet(customer)
     puts "Welcome back #{customer.name}!"
 end
 
+def get_city
+    @city = @cli.ask "Please enter the city"
+end
+
 def menu(customer)
     @cli.choose do |menu|
         menu.prompt = "What are you looking for today?"
         
-        menu.choice("Italian"){Restaurant.find_by_restaurants("Italian").each {|x| puts x.name}}
-        menu.choice("Japanese"){Restaurant.find_by_restaurants("Japanese").each {|x| puts x.name}}
-        menu.choice("Szechuan"){Restaurant.find_by_restaurants("Szechuan").each {|x| puts x.name}}
-        menu.choice("American"){Restaurant.find_by_restaurants("American").each {|x| puts x.name}}
-        menu.choice("Latin"){Restaurant.find_by_restaurants("Latin").each {|x| puts x.name}}
-        menu.choice("Indian"){Restaurant.find_by_restaurants("Indian").each {|x| puts x.name}}
-  
+        
+        menu.choice("Italian",){Restaurant.find_by_restaurants("Italian",@city).each {|x| puts x.name}}
+            
+        menu.choice("Japanese"){Restaurant.find_by_restaurants("Japanese",@city).each {|x| puts x.name}}
+        menu.choice("Szechuan"){Restaurant.find_by_restaurants("Szechuan",@city).each {|x| puts x.name}}
+        menu.choice("American"){Restaurant.find_by_restaurants("American",@city).each {|x| puts x.name}}
+        menu.choice("Latin"){Restaurant.find_by_restaurants("Latin",@city).each {|x| puts x.name}}
+        menu.choice("Indian"){Restaurant.find_by_restaurants("Indian",@city).each {|x| puts x.name}}
     end
+
+    # @cli.choose do |city|
+    #     city.prompt = "Enter the city"
+    #     city.choice(city_c){
+    #         Restaurant.
+    #     }
+
 end
 
 #binding.pry
@@ -34,4 +46,5 @@ end
 
 current_customer = ask_for_username
 greet(current_customer)
+get_city
 menu(current_customer)
