@@ -10,7 +10,9 @@ class Review < ActiveRecord::Base
         else
             puts "Reviews are not available for this restaurant."
         end
+        return review
     end
+    
     
 end
 
