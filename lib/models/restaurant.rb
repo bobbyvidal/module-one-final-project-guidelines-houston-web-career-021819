@@ -14,7 +14,7 @@ class Restaurant < ActiveRecord::Base
                 names<<restaurant.name
             end
             puts names
-            return names
+            return restaurants
         end
     end
 
