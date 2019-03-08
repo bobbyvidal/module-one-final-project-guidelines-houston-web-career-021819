@@ -39,6 +39,16 @@ def menu(customer)
     end
 end
 
+def rest_menu(rest_array)
+    if rest_array != nil    
+        @cli.choose do |menu|
+            menu.prompt = "Which restaurant would you like to choose?"
+            rest_array.each do |x|
+                menu.choice(x){Review.find_review(x)}
+            end
+        end
+    end
+end
 
 
 
@@ -56,17 +66,6 @@ end
 #     affordability = @cli.ask "How affordable you think the restaurant, on a scale of 1 to 5:"
 #     return [content, rating, affordability]
 # end
-
-def rest_menu(rest_array)
-    if rest_array != nil    
-        @cli.choose do |menu|
-            menu.prompt = "Which restaurant would you like to choose?"
-            rest_array.each do |x|
-                menu.choice(x){Review.find_review(x)}
-            end
-        end
-    end
-end
 
 
 
