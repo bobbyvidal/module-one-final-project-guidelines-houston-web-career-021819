@@ -30,10 +30,10 @@ def menu(customer)
 
         menu.choice("Italian",){Restaurant.find_by_restaurants("Italian",@city)}
         menu.choice("Japanese"){Restaurant.find_by_restaurants("Japanese",@city)}
-        menu.choice("Szechuan"){Restaurant.find_by_restaurants("Szechuan",@city)
-        menu.choice("American"){Restaurant.find_by_restaurants("American",@city)
-        menu.choice("Latin"){Restaurant.find_by_restaurants("Latin",@city)
-        menu.choice("Indian"){Restaurant.find_by_restaurants("Indian",@city)
+        menu.choice("Szechuan"){Restaurant.find_by_restaurants("Szechuan",@city)}
+        menu.choice("American"){Restaurant.find_by_restaurants("American",@city)}
+        menu.choice("Latin"){Restaurant.find_by_restaurants("Latin",@city)}
+        menu.choice("Indian"){Restaurant.find_by_restaurants("Indian",@city)}
     end
 end
 
