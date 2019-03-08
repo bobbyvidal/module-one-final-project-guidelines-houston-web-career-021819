@@ -42,26 +42,28 @@ end
 
 
 
-def rest_menu_2(rest_name, customer)
-    @cli.choose do |menu|
-        menu.prompt = "What would you like to do?"
-        menu.choice("See Reviews"){Review.find_review(rest_name)}
-        menu.choice("Write new review"){customer.write_review(rest_name,get_review_from_customer(rest_name))}
-    end
-end
+# def rest_menu_2(rest_name, customer)
+#     @cli.choose do |menu|
+#         menu.prompt = "What would you like to do?"
+#         menu.choice("See Reviews"){Review.find_review(rest_name)}
+#         menu.choice("Write new review"){customer.write_review(rest_name,get_review_from_customer(rest_name))}
+#     end
+# end
 
-def get_review_from_customer(restaurant_name)
-    content = @cli.ask "What review comment would you like to give?"
-    rating = @cli.ask "How would you rate the restaurant on a scale of 1 to 5:"
-    affordability = @cli.ask "How affordable you think the restaurant, on a scale of 1 to 5:"
-    return [content, rating, affordability]
-end
+# def get_review_from_customer(restaurant_name)
+#     content = @cli.ask "What review comment would you like to give?"
+#     rating = @cli.ask "How would you rate the restaurant on a scale of 1 to 5:"
+#     affordability = @cli.ask "How affordable you think the restaurant, on a scale of 1 to 5:"
+#     return [content, rating, affordability]
+# end
 
-def rest_menu(rest_array,customer)
-    @cli.choose do |menu|
-        menu.prompt = "Which restaurant would you like to choose?"
-        rest_array.each do |x|
-        menu.choice(x){rest_menu_2(x, customer)}
+def rest_menu(rest_array)
+    if rest_array != nil    
+        @cli.choose do |menu|
+            menu.prompt = "Which restaurant would you like to choose?"
+            rest_array.each do |x|
+                menu.choice(x){Review.find_review(x)}
+            end
         end
     end
 end
