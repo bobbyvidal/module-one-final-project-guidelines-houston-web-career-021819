@@ -30,17 +30,23 @@ def menu(customer)
     @cli.choose do |menu|
         menu.prompt = "What are you looking for today?"
 
-        menu.choice("Italian",){Restaurant.find_by_restaurants("Italian",@city)}
-        menu.choice("Japanese"){Restaurant.find_by_restaurants("Japanese",@city)}
-        menu.choice("Szechuan"){Restaurant.find_by_restaurants("Szechuan",@city)}
-        menu.choice("American"){Restaurant.find_by_restaurants("American",@city)}
-        menu.choice("Latin"){Restaurant.find_by_restaurants("Latin",@city)}
-        menu.choice("Indian"){Restaurant.find_by_restaurants("Indian",@city)}
+        menu.choice("Italian",){rest_menu(Restaurant.find_by_restaurants("Italian",@city))}
+        menu.choice("Japanese"){rest_menu(Restaurant.find_by_restaurants("Japanese",@city))}
+        menu.choice("Szechuan"){rest_menu(Restaurant.find_by_restaurants("Szechuan",@city))}
+        menu.choice("American"){rest_menu(Restaurant.find_by_restaurants("American",@city))}
+        menu.choice("Latin"){rest_menu(Restaurant.find_by_restaurants("Latin",@city))}
+        menu.choice("Indian"){rest_menu(Restaurant.find_by_restaurants("Indian",@city))}
     end
 end
 
-
- 
+def rest_menu(rest_array)
+    @cli.choose do |menu|
+        menu.prompt = "What are you looking for today?"
+        rest_array.each do |current_restaurant|
+        menu.choice(current_restaurant){Review.find_review(current_restaurant)}
+        end
+    end
+end
 
 
 

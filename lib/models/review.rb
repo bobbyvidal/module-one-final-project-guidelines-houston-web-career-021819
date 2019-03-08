@@ -5,8 +5,12 @@ class Review < ActiveRecord::Base
  
     def self.find_review(restaurant)
         review = Review.find_by(restaurant_name: restaurant)
-        "Rating: #{review.rating}, Affordability: #{review.affordability}, Review: #{review.content}"
+        if review != nil
+            puts "Rating: #{review.rating}, Affordability: #{review.affordability}, Review: #{review.content}"
+        else
+            puts "Reviews are not available for this restaurant."
+        end
     end
-    binding.pry
+    
 end
 

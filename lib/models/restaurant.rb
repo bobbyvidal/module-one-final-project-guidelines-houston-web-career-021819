@@ -13,8 +13,7 @@ class Restaurant < ActiveRecord::Base
             restaurants.each do |restaurant|
                 names<<restaurant.name
             end
-            puts names
-            return restaurants
+            return names
         end
     end
 
